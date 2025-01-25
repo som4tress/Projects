@@ -3,7 +3,7 @@
 echo "Disabling ufw"
 sudo ufw disable
 
-echo "Waiting for 30 sseconds before launching Home Light Automation"
+echo "Waiting for 30 sseconds before launching Water Monitoring Automation"
 sleep 30
 
 source /home/pluto/Projects/.venv/bin/activate
