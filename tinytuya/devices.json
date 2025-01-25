@@ -1,0 +1,294 @@
+[
+    {
+        "name": "Patio",
+        "id": "01200658dc4f22002a13",
+        "key": "1PfeijF&gFnxaso`",
+        "mac": "dc:4f:22:00:2a:13",
+        "uuid": "01200658dc4f22002a13",
+        "category": "cz",
+        "product_name": "smart socket",
+        "product_id": "rozAuCvPcosV08Ub",
+        "biz_type": 0,
+        "model": "\u5b89\u4fe1\u53ef12F",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/socket_new2.png",
+        "mapping": {
+            "1": {
+                "code": "switch",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 86400,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        },
+        "ip": "10.0.0.252",
+        "version": "3.1"
+    },
+    {
+        "name": "Shivi Den",
+        "id": "01200658dc4f22002b9c",
+        "key": "$q;]y>Ra~{8^u^sG",
+        "mac": "dc:4f:22:00:2b:9c",
+        "uuid": "01200658dc4f22002b9c",
+        "category": "cz",
+        "product_name": "smart socket",
+        "product_id": "rozAuCvPcosV08Ub",
+        "biz_type": 0,
+        "model": "\u5b89\u4fe1\u53ef12F",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/socket_new2.png",
+        "mapping": {
+            "1": {
+                "code": "switch",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 86400,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        },
+        "ip": "10.0.0.216",
+        "version": "3.1"
+    },
+    {
+        "name": "Garage",
+        "id": "01200658dc4f22002cf4",
+        "key": "SUTugg{OQWuocLLV",
+        "mac": "dc:4f:22:00:2c:f4",
+        "uuid": "01200658dc4f22002cf4",
+        "category": "cz",
+        "product_name": "smart socket",
+        "product_id": "rozAuCvPcosV08Ub",
+        "biz_type": 0,
+        "model": "\u5b89\u4fe1\u53ef12F",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/socket_new2.png",
+        "mapping": {
+            "1": {
+                "code": "switch",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 86400,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        },
+        "ip": "10.0.0.131",
+        "version": "3.1"
+    },
+    {
+        "name": "Temple Light",
+        "id": "01200658dc4f22132a35",
+        "key": "BIJ9qZ313Cux:&/j",
+        "mac": "dc:4f:22:13:2a:35",
+        "uuid": "01200658dc4f22132a35",
+        "category": "cz",
+        "product_name": "smart socket",
+        "product_id": "rozAuCvPcosV08Ub",
+        "biz_type": 0,
+        "model": "\u5b89\u4fe1\u53ef12F",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/socket_new2.png",
+        "mapping": {
+            "1": {
+                "code": "switch",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 86400,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        },
+        "ip": "10.0.0.97",
+        "version": "3.1"
+    },
+    {
+        "name": "Office Den Smart Plug",
+        "id": "6626001050029109957a",
+        "key": "{w#Oru.T<jfG*g$`",
+        "mac": "50:02:91:09:95:7a",
+        "uuid": "6626001050029109957a",
+        "sn": "00730000128824",
+        "category": "pc",
+        "product_name": "Smart Plug",
+        "product_id": "nde0ziykpsgr0n4m",
+        "biz_type": 0,
+        "model": "WP2-B",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1519551146071pEnBd/3c2fa7ed91e3e55c1ef3d3408cc68f5a.png",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "9": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 86400,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "10": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 86400,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        },
+        "ip": "10.0.0.89",
+        "version": "3.3"
+    },
+    {
+        "name": "Living Room Smart Plug",
+        "id": "66260010500291060b4f",
+        "key": "HKy{IH1kNmu6E(S+",
+        "mac": "50:02:91:06:0b:4f",
+        "uuid": "66260010500291060b4f",
+        "sn": "00730000155718",
+        "category": "pc",
+        "product_name": "Smart Plug",
+        "product_id": "nde0ziykpsgr0n4m",
+        "biz_type": 0,
+        "model": "WP2-B",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1519551146071pEnBd/3c2fa7ed91e3e55c1ef3d3408cc68f5a.png",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "9": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 86400,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "10": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 86400,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        },
+        "ip": "10.0.0.169",
+        "version": "3.3"
+    },
+    {
+        "name": "Smart 3-Way Dimmer Switch_DS02",
+        "id": "eb723dcdf76b442704lpl4",
+        "key": "Zjn>lvWAC:=#C&U#",
+        "mac": "10:d5:61:17:9f:fc",
+        "uuid": "7cdddd56d66ff24b",
+        "sn": "100026576025A5",
+        "category": "tgq",
+        "product_name": "",
+        "product_id": "9czfatwioewrl7au",
+        "biz_type": 0,
+        "model": "DS02(BK)",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/ay14906729310721fNjn/c564ae2ded24c42ba1be57f11f0d163b.jpg",
+        "mapping": {
+            "1": {
+                "code": "switch_led_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "bright_value_1",
+                "type": "Integer",
+                "values": {
+                    "min": 10,
+                    "max": 1000,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "3": {
+                "code": "brightness_min_1",
+                "type": "Integer",
+                "values": {
+                    "min": 10,
+                    "max": 1000,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "4": {
+                "code": "led_type_1",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "incandescent",
+                        "halogen"
+                    ]
+                }
+            }
+        },
+        "ip": "",
+        "version": ""
+    }
+]

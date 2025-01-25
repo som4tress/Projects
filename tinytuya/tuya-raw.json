@@ -1,0 +1,446 @@
+{
+    "result": [
+        {
+            "active_time": 1703225932,
+            "biz_type": 0,
+            "category": "cz",
+            "create_time": 1547349198,
+            "icon": "smart/icon/socket_new2.png",
+            "id": "01200658dc4f22002a13",
+            "ip": "67.160.204.210",
+            "lat": "37.4287",
+            "local_key": "1PfeijF&gFnxaso`",
+            "lon": "-121.9133",
+            "model": "\u5b89\u4fe1\u53ef12F",
+            "name": "Patio",
+            "online": true,
+            "owner_id": "180674861",
+            "product_id": "rozAuCvPcosV08Ub",
+            "product_name": "smart socket",
+            "status": [
+                {
+                    "code": "switch",
+                    "value": false
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                }
+            ],
+            "sub": false,
+            "time_zone": "-08:00",
+            "uid": "az1703096159017QHxrk",
+            "update_time": 1736181434,
+            "uuid": "01200658dc4f22002a13",
+            "mapping": {
+                "1": {
+                    "code": "switch",
+                    "type": "Boolean",
+                    "values": {}
+                },
+                "2": {
+                    "code": "countdown_1",
+                    "type": "Integer",
+                    "values": {
+                        "unit": "s",
+                        "min": 0,
+                        "max": 86400,
+                        "scale": 0,
+                        "step": 1
+                    }
+                }
+            }
+        },
+        {
+            "active_time": 1703395859,
+            "biz_type": 0,
+            "category": "cz",
+            "create_time": 1547348613,
+            "icon": "smart/icon/socket_new2.png",
+            "id": "01200658dc4f22002b9c",
+            "ip": "67.160.204.210",
+            "lat": "37.4287",
+            "local_key": "$q;]y>Ra~{8^u^sG",
+            "lon": "-121.9133",
+            "model": "\u5b89\u4fe1\u53ef12F",
+            "name": "Shivi Den",
+            "online": true,
+            "owner_id": "180674861",
+            "product_id": "rozAuCvPcosV08Ub",
+            "product_name": "smart socket",
+            "status": [
+                {
+                    "code": "switch",
+                    "value": true
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                }
+            ],
+            "sub": false,
+            "time_zone": "-08:00",
+            "uid": "az1703096159017QHxrk",
+            "update_time": 1736181418,
+            "uuid": "01200658dc4f22002b9c",
+            "mapping": {
+                "1": {
+                    "code": "switch",
+                    "type": "Boolean",
+                    "values": {}
+                },
+                "2": {
+                    "code": "countdown_1",
+                    "type": "Integer",
+                    "values": {
+                        "unit": "s",
+                        "min": 0,
+                        "max": 86400,
+                        "scale": 0,
+                        "step": 1
+                    }
+                }
+            }
+        },
+        {
+            "active_time": 1703097020,
+            "biz_type": 0,
+            "category": "cz",
+            "create_time": 1698717737,
+            "icon": "smart/icon/socket_new2.png",
+            "id": "01200658dc4f22002cf4",
+            "ip": "67.160.204.210",
+            "lat": "37.4287",
+            "local_key": "SUTugg{OQWuocLLV",
+            "lon": "-121.9133",
+            "model": "\u5b89\u4fe1\u53ef12F",
+            "name": "Garage",
+            "online": true,
+            "owner_id": "180674861",
+            "product_id": "rozAuCvPcosV08Ub",
+            "product_name": "smart socket",
+            "status": [
+                {
+                    "code": "switch",
+                    "value": false
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                }
+            ],
+            "sub": false,
+            "time_zone": "-08:00",
+            "uid": "az1703096159017QHxrk",
+            "update_time": 1736181418,
+            "uuid": "01200658dc4f22002cf4",
+            "mapping": {
+                "1": {
+                    "code": "switch",
+                    "type": "Boolean",
+                    "values": {}
+                },
+                "2": {
+                    "code": "countdown_1",
+                    "type": "Integer",
+                    "values": {
+                        "unit": "s",
+                        "min": 0,
+                        "max": 86400,
+                        "scale": 0,
+                        "step": 1
+                    }
+                }
+            }
+        },
+        {
+            "active_time": 1703096770,
+            "biz_type": 0,
+            "category": "cz",
+            "create_time": 1573440637,
+            "icon": "smart/icon/socket_new2.png",
+            "id": "01200658dc4f22132a35",
+            "ip": "67.160.204.210",
+            "lat": "37.43",
+            "local_key": "BIJ9qZ313Cux:&/j",
+            "lon": "-121.91",
+            "model": "\u5b89\u4fe1\u53ef12F",
+            "name": "Temple Light",
+            "online": true,
+            "owner_id": "180674861",
+            "product_id": "rozAuCvPcosV08Ub",
+            "product_name": "smart socket",
+            "status": [
+                {
+                    "code": "switch",
+                    "value": true
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                }
+            ],
+            "sub": false,
+            "time_zone": "-08:00",
+            "uid": "az1703096159017QHxrk",
+            "update_time": 1736181418,
+            "uuid": "01200658dc4f22132a35",
+            "mapping": {
+                "1": {
+                    "code": "switch",
+                    "type": "Boolean",
+                    "values": {}
+                },
+                "2": {
+                    "code": "countdown_1",
+                    "type": "Integer",
+                    "values": {
+                        "unit": "s",
+                        "min": 0,
+                        "max": 86400,
+                        "scale": 0,
+                        "step": 1
+                    }
+                }
+            }
+        },
+        {
+            "active_time": 1703097179,
+            "biz_type": 0,
+            "category": "pc",
+            "create_time": 1685216418,
+            "icon": "smart/icon/ay1519551146071pEnBd/3c2fa7ed91e3e55c1ef3d3408cc68f5a.png",
+            "id": "6626001050029109957a",
+            "ip": "67.160.204.210",
+            "lat": "37.4287",
+            "local_key": "{w#Oru.T<jfG*g$`",
+            "lon": "-121.9133",
+            "model": "WP2-B",
+            "name": "Office Den Smart Plug",
+            "online": true,
+            "owner_id": "180674861",
+            "product_id": "nde0ziykpsgr0n4m",
+            "product_name": "Smart Plug",
+            "status": [
+                {
+                    "code": "switch_1",
+                    "value": true
+                },
+                {
+                    "code": "switch_2",
+                    "value": false
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                },
+                {
+                    "code": "countdown_2",
+                    "value": 0
+                }
+            ],
+            "sub": false,
+            "time_zone": "-08:00",
+            "uid": "az1703096159017QHxrk",
+            "update_time": 1736139395,
+            "uuid": "6626001050029109957a",
+            "mapping": {
+                "1": {
+                    "code": "switch_1",
+                    "type": "Boolean",
+                    "values": {}
+                },
+                "2": {
+                    "code": "switch_2",
+                    "type": "Boolean",
+                    "values": {}
+                },
+                "9": {
+                    "code": "countdown_1",
+                    "type": "Integer",
+                    "values": {
+                        "unit": "s",
+                        "min": 0,
+                        "max": 86400,
+                        "scale": 0,
+                        "step": 1
+                    }
+                },
+                "10": {
+                    "code": "countdown_2",
+                    "type": "Integer",
+                    "values": {
+                        "unit": "s",
+                        "min": 0,
+                        "max": 86400,
+                        "scale": 0,
+                        "step": 1
+                    }
+                }
+            }
+        },
+        {
+            "active_time": 1703096554,
+            "biz_type": 0,
+            "category": "pc",
+            "create_time": 1685152208,
+            "icon": "smart/icon/ay1519551146071pEnBd/3c2fa7ed91e3e55c1ef3d3408cc68f5a.png",
+            "id": "66260010500291060b4f",
+            "ip": "67.160.204.210",
+            "lat": "37.4287",
+            "local_key": "HKy{IH1kNmu6E(S+",
+            "lon": "-121.9133",
+            "model": "WP2-B",
+            "name": "Living Room Smart Plug",
+            "online": true,
+            "owner_id": "180674861",
+            "product_id": "nde0ziykpsgr0n4m",
+            "product_name": "Smart Plug",
+            "status": [
+                {
+                    "code": "switch_1",
+                    "value": true
+                },
+                {
+                    "code": "switch_2",
+                    "value": true
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                },
+                {
+                    "code": "countdown_2",
+                    "value": 0
+                }
+            ],
+            "sub": false,
+            "time_zone": "-08:00",
+            "uid": "az1703096159017QHxrk",
+            "update_time": 1736139393,
+            "uuid": "66260010500291060b4f",
+            "mapping": {
+                "1": {
+                    "code": "switch_1",
+                    "type": "Boolean",
+                    "values": {}
+                },
+                "2": {
+                    "code": "switch_2",
+                    "type": "Boolean",
+                    "values": {}
+                },
+                "9": {
+                    "code": "countdown_1",
+                    "type": "Integer",
+                    "values": {
+                        "unit": "s",
+                        "min": 0,
+                        "max": 86400,
+                        "scale": 0,
+                        "step": 1
+                    }
+                },
+                "10": {
+                    "code": "countdown_2",
+                    "type": "Integer",
+                    "values": {
+                        "unit": "s",
+                        "min": 0,
+                        "max": 86400,
+                        "scale": 0,
+                        "step": 1
+                    }
+                }
+            }
+        },
+        {
+            "active_time": 1703096548,
+            "biz_type": 0,
+            "category": "tgq",
+            "create_time": 1702193878,
+            "icon": "smart/icon/ay14906729310721fNjn/c564ae2ded24c42ba1be57f11f0d163b.jpg",
+            "id": "eb723dcdf76b442704lpl4",
+            "ip": "67.160.204.210",
+            "lat": "37.4287",
+            "local_key": "Zjn>lvWAC:=#C&U#",
+            "lon": "-121.9133",
+            "model": "DS02(BK)",
+            "name": "Smart 3-Way Dimmer Switch_DS02",
+            "online": false,
+            "owner_id": "180674861",
+            "product_id": "9czfatwioewrl7au",
+            "product_name": "",
+            "status": [
+                {
+                    "code": "switch_led_1",
+                    "value": false
+                },
+                {
+                    "code": "bright_value_1",
+                    "value": 653
+                },
+                {
+                    "code": "brightness_min_1",
+                    "value": 100
+                },
+                {
+                    "code": "led_type_1",
+                    "value": "LED"
+                }
+            ],
+            "sub": false,
+            "time_zone": "-08:00",
+            "uid": "az1703096159017QHxrk",
+            "update_time": 1723088574,
+            "uuid": "7cdddd56d66ff24b",
+            "mapping": {
+                "1": {
+                    "code": "switch_led_1",
+                    "type": "Boolean",
+                    "values": {}
+                },
+                "2": {
+                    "code": "bright_value_1",
+                    "type": "Integer",
+                    "values": {
+                        "min": 10,
+                        "max": 1000,
+                        "scale": 0,
+                        "step": 1
+                    }
+                },
+                "3": {
+                    "code": "brightness_min_1",
+                    "type": "Integer",
+                    "values": {
+                        "min": 10,
+                        "max": 1000,
+                        "scale": 0,
+                        "step": 1
+                    }
+                },
+                "4": {
+                    "code": "led_type_1",
+                    "type": "Enum",
+                    "values": {
+                        "range": [
+                            "incandescent",
+                            "halogen"
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "success": true,
+    "t": 1736201830969,
+    "tid": "f95f8755cc7b11efb6389e8064789a81",
+    "file": {
+        "name": "tuya-raw.json",
+        "description": "Full raw list of Tuya devices.",
+        "account": "pspryvn3yaaq8mdfme37",
+        "date": "2025-01-06T14:17:11.719015",
+        "tinytuya": "1.16.0"
+    }
+}

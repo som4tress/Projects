@@ -1,0 +1,165 @@
+{
+    "timestamp": 1736201854.2177782,
+    "devices": [
+        {
+            "id": "01200658dc4f22002b9c",
+            "ip": "10.0.0.216",
+            "active": 2,
+            "ability": 0,
+            "mode": 0,
+            "encrypt": true,
+            "productKey": "rozAuCvPcosV08Ub",
+            "name": "Shivi Den",
+            "key": "$q;]y>Ra~{8^u^sG",
+            "mac": "dc:4f:22:00:2b:9c",
+            "token": "",
+            "wf_cfg": "",
+            "dev_type": "default",
+            "err": "",
+            "type": "default",
+            "dps": {
+                "devId": "01200658dc4f22002b9c",
+                "dps": {
+                    "1": true,
+                    "2": 0
+                }
+            },
+            "origin": "broadcast",
+            "ver": "3.1"
+        },
+        {
+            "id": "01200658dc4f22002cf4",
+            "ip": "10.0.0.131",
+            "active": 2,
+            "ability": 0,
+            "mode": 0,
+            "encrypt": true,
+            "productKey": "rozAuCvPcosV08Ub",
+            "name": "Garage",
+            "key": "SUTugg{OQWuocLLV",
+            "mac": "dc:4f:22:00:2c:f4",
+            "token": "",
+            "wf_cfg": "",
+            "dev_type": "default",
+            "err": "",
+            "type": "default",
+            "dps": {
+                "devId": "01200658dc4f22002cf4",
+                "dps": {
+                    "1": false,
+                    "2": 0
+                }
+            },
+            "origin": "broadcast",
+            "ver": "3.1"
+        },
+        {
+            "id": "01200658dc4f22132a35",
+            "ip": "10.0.0.97",
+            "active": 2,
+            "ability": 0,
+            "mode": 0,
+            "encrypt": true,
+            "productKey": "rozAuCvPcosV08Ub",
+            "name": "Temple Light",
+            "key": "BIJ9qZ313Cux:&/j",
+            "mac": "dc:4f:22:13:2a:35",
+            "token": "",
+            "wf_cfg": "",
+            "dev_type": "default",
+            "err": "",
+            "type": "default",
+            "dps": {
+                "devId": "01200658dc4f22132a35",
+                "dps": {
+                    "1": true,
+                    "2": 0
+                }
+            },
+            "origin": "broadcast",
+            "ver": "3.1"
+        },
+        {
+            "id": "01200658dc4f22002a13",
+            "ip": "10.0.0.252",
+            "active": 2,
+            "ability": 0,
+            "mode": 0,
+            "encrypt": true,
+            "productKey": "rozAuCvPcosV08Ub",
+            "name": "Patio",
+            "key": "1PfeijF&gFnxaso`",
+            "mac": "dc:4f:22:00:2a:13",
+            "token": "",
+            "wf_cfg": "",
+            "dev_type": "default",
+            "err": "",
+            "type": "default",
+            "dps": {
+                "devId": "01200658dc4f22002a13",
+                "dps": {
+                    "1": false,
+                    "2": 0
+                }
+            },
+            "origin": "broadcast",
+            "ver": "3.1"
+        },
+        {
+            "id": "66260010500291060b4f",
+            "ip": "10.0.0.169",
+            "active": 2,
+            "ability": 0,
+            "mode": 0,
+            "encrypt": true,
+            "productKey": "nde0ziykpsgr0n4m",
+            "name": "Living Room Smart Plug",
+            "key": "HKy{IH1kNmu6E(S+",
+            "mac": "50:02:91:06:0b:4f",
+            "token": "",
+            "wf_cfg": "",
+            "dev_type": "default",
+            "err": "",
+            "type": "default",
+            "dps": {
+                "devId": "66260010500291060b4f",
+                "dps": {
+                    "1": true,
+                    "2": true,
+                    "9": 0,
+                    "10": 0
+                }
+            },
+            "origin": "broadcast",
+            "ver": "3.3"
+        },
+        {
+            "id": "6626001050029109957a",
+            "ip": "10.0.0.89",
+            "active": 2,
+            "ability": 0,
+            "mode": 0,
+            "encrypt": true,
+            "productKey": "nde0ziykpsgr0n4m",
+            "name": "Office Den Smart Plug",
+            "key": "{w#Oru.T<jfG*g$`",
+            "mac": "50:02:91:09:95:7a",
+            "token": "",
+            "wf_cfg": "",
+            "dev_type": "default",
+            "err": "",
+            "type": "default",
+            "dps": {
+                "devId": "6626001050029109957a",
+                "dps": {
+                    "1": true,
+                    "2": false,
+                    "9": 0,
+                    "10": 0
+                }
+            },
+            "origin": "broadcast",
+            "ver": "3.3"
+        }
+    ]
+}
