@@ -2,8 +2,7 @@ import asyncio
 import sys
 import os
 import time as tm
-from datetime import datetime
-from kasa import Discover
+from flask.cli import F
 from homeassistant_api import Client, State
 from math import radians, cos, sin, asin, sqrt, atan2
 
@@ -19,9 +18,12 @@ class BMWLockMonitorWrapper:
         
         self._prevTime = None        
         
-        self._logFile = os.environ['PLUTO_HOME_DIR'] + "/BMWLockMonitor/BMWLockMonitorAutomation.log"
-        self._logFileHandle = open(self._logFile, 'w')
-        #self._logFileHandle = sys.stdout
+        self._driving = False
+        self._iter = 0
+        
+        # self._logFile = os.environ['PLUTO_HOME_DIR'] + "/BMWLockMonitor/BMWLockMonitorAutomation.log"
+        # self._logFileHandle = open(self._logFile, 'w')
+        self._logFileHandle = sys.stdout
         
         self._longLivedToken = os.environ["HA_LONG_LIVE_TOKEN"]
         
@@ -43,7 +45,7 @@ class BMWLockMonitorWrapper:
     
     def updateLocation(self):
         client = Client("https://som4tress.duckdns.org:8123/api", self._longLivedToken, use_async=False)
-        # sun_state = str(client.get_state(entity_id="sun.sun").state)
+        
         self._curLong = client.get_state(entity_id="device_tracker.x5_xdrive40i").attributes["longitude"]
         self._curLat = client.get_state(entity_id="device_tracker.x5_xdrive40i").attributes["latitude"]
         self._curdir = client.get_state(entity_id="device_tracker.x5_xdrive40i").attributes["direction"]
@@ -61,18 +63,33 @@ class BMWLockMonitorWrapper:
             
             if distance != 0 or self._prevdir != self._curdir:
                 distance = 1
+                self._driving = True
             else:
                 distance = 0
+                self._driving = False
             
-            client.set_state(State(state=str(distance), entity_id="sensor.x5_xdrive40i_driving", attributes={"driving":distance}))
+            client.set_state(State(state=str(distance), entity_id="sensor.x5_xdrive40i_driving", attributes={"driving":distance}))            
         
         self._prevLat = self._curLat
         self._prevLong = self._curLong
         self._prevdir = self._curdir
         
-        # val = str(round(abs(numpy.average(self._hallwayDimmerAmbientLightValuesArr)), 2))
-        # client.set_state(State(state=val, entity_id="sensor.hallway_ambient_light", attributes={"ambient_light":val}))
-    
+        door = client.get_state(entity_id="binary_sensor.x5_xdrive40i_door_lock_state").state
+        window = client.get_state(entity_id="binary_sensor.x5_xdrive40i_windows").state
+        lids = client.get_state(entity_id="binary_sensor.x5_xdrive40i_lids").state
+        print(f"Door State : {door}", file=self._logFileHandle)
+        print(f"Window State : {window}", file=self._logFileHandle)
+        print(f"Lids State : {lids}", file=self._logFileHandle)
+        
+        if (door == "on" or window == "on" or lids == "on"):
+            if self._driving == False:
+                self._iter += 1
+                if self._iter >= 2:
+                    print("sending notification", file=self._logFileHandle)
+                    #client.call_service("notify", service="mobile_app_som4tress_iphone", data={"message": "BMW X5 doors or windows or lids might not be locked!"})
+                    self._iter = 0  
+            else:
+                self._iter = 0
             
 def main():
     bmwWrapper = BMWLockMonitorWrapper()
