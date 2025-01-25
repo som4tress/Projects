@@ -7,8 +7,6 @@ from kasa import Discover
 from homeassistant_api import Client, State
 import numpy
 
-
-
 class KasaHAWrapper :
     def __init__(self):
         self._livingRoomDimmerIP = None
@@ -27,7 +25,7 @@ class KasaHAWrapper :
         
         self._logFile = os.environ['PLUTO_HOME_DIR'] + "/LightAutomation/LightAutomation.log"
         self._logFileHandle = open(self._logFile, 'w')
-        #self._logFileHandle = sys.stdout
+        # self._logFileHandle = sys.stdout
         
         self._longLivedToken = os.environ["HA_LONG_LIVE_TOKEN"]
     

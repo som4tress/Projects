@@ -18,7 +18,7 @@ from datetime import datetime
 from re import findall
 from subprocess import Popen, PIPE
 
-
+from homeassistant_api import Client, State
 
 class BlinkWrapper :
     def __init__(self):
@@ -35,6 +35,8 @@ class BlinkWrapper :
         self._logFile = os.environ['PLUTO_HOME_DIR'] + "/BlinkAutomation/BlinkAutomation.log"        
         self._logFileHandle = open(self._logFile, 'w')
         #self._logFileHandle = sys.stdout
+        
+        self._longLivedToken = os.environ["HA_LONG_LIVE_TOKEN"]
         
     async def start(self):
         #blink = Blink(session=ClientSession())
@@ -58,7 +60,7 @@ class BlinkWrapper :
         print('=======================================', file=self._logFileHandle)
         print("Arming " + camera.name, file=self._logFileHandle) if flag == True else print("Dis-Arming " + camera.name, file=self._logFileHandle)
         print('=======================================', file=self._logFileHandle)
-        result = await camera.async_arm(flag)
+        result = await camera.async_arm(flag)        
         return result
     
     def isNowInTimePeriod(self, startTime, endTime, nowTime): 
@@ -101,17 +103,22 @@ class BlinkWrapper :
         #asyncio.run(self.syncArm(True))
         #return
 
+        client = Client(os.environ["HA_EXTERNAL_API_URL"], self._longLivedToken, use_async=False)        
+
         if(self.isNowInTimePeriod(nowTime.time(), armTime, disarmTime)):
             print(str(nowTime) + ': ' + "Arming Backyard Camera ...", file=self._logFileHandle)
             asyncio.run(self.cameraArm(self._backyardOutCamera, True))
+            client.set_state(State(state="on", entity_id="sensor.blink_backyard_camera", attributes={"battery": self._backyardOutCamera.battery}))
             tm.sleep(10)
             
             print(str(nowTime) + ': ' + "Arming Shivi Den Out Camera ...", file=self._logFileHandle)
             asyncio.run(self.cameraArm(self._shiviDenOutCamera, True))
+            client.set_state(State(state="on", entity_id="sensor.blink_shivi_den_out_camera", attributes={"battery": self._shiviDenOutCamera.battery}))
             tm.sleep(10)
             
             print(str(nowTime) + ': ' + "Arming Shivi Den In Camera ...", file=self._logFileHandle)
-            asyncio.run(self.cameraArm(self._shiviDenInCamera, True))            
+            asyncio.run(self.cameraArm(self._shiviDenInCamera, True))  
+            client.set_state(State(state="on", entity_id="sensor.blink_shivi_den_in_camera", attributes={"battery": self._shiviDenInCamera.battery}))          
             tm.sleep(10)
             
             # print(str(nowTime) + ': ' + "Arming Som Den In Camera ...")
@@ -120,14 +127,17 @@ class BlinkWrapper :
         else:
             print(str(nowTime) + ': ' + "Disarming Backyard Camera ...", file=self._logFileHandle)
             asyncio.run(self.cameraArm(self._backyardOutCamera, False))
+            client.set_state(State(state="off", entity_id="sensor.blink_backyard_camera", attributes={"battery": self._backyardOutCamera.battery}))
             tm.sleep(10)
             
             print(str(nowTime) + ': ' + "Disarming Shivi Den Out Camera ...", file=self._logFileHandle)
             asyncio.run(self.cameraArm(self._shiviDenOutCamera, False))
+            client.set_state(State(state="off", entity_id="sensor.blink_shivi_den_out_camera", attributes={"battery": self._shiviDenOutCamera.battery}))
             tm.sleep(10)
             
             print(str(nowTime) + ': ' + "Disarming Shivi Den In Camera ...", file=self._logFileHandle)
             asyncio.run(self.cameraArm(self._shiviDenInCamera, False))            
+            client.set_state(State(state="off", entity_id="sensor.blink_shivi_den_in_camera", attributes={"battery": self._shiviDenInCamera.battery}))
             tm.sleep(10)
             
             #print(str(nowTime) + ': ' + "Disarming Som Den In Camera ...", file=self._logFileHandle)
@@ -136,29 +146,41 @@ class BlinkWrapper :
             
             print(str(nowTime) + ': ' + "Disarming Living Room In Camera ...", file=self._logFileHandle)
             asyncio.run(self.cameraArm(self._livingRoomInCamera, False))             
+            client.set_state(State(state="off", entity_id="sensor.blink_living_room_in_camera", attributes={"battery": self._livingRoomInCamera.battery}))
             tm.sleep(10)
 
+        print(str(nowTime) + ': ' + "Arming Door Bell Camera ...", file=self._logFileHandle)
+        asyncio.run(self.cameraArm(self._doorBellCamera, True))
+        client.set_state(State(state="on", entity_id="sensor.blink_door_bell_camera", attributes={"battery": self._doorBellCamera.battery}))
+        tm.sleep(10)
+        
         self._prevSyncTime = nowTime
 
         print("==================================================================================================", file=self._logFileHandle)
 
     def OverrideSchedule(self):
+        client = Client(os.environ["HA_EXTERNAL_API_URL"], self._longLivedToken, use_async=False)
+        
         nowTime = datetime.now()#.astimezone(timezone('US/Pacific'))
 
         print(str(nowTime) + ': ' + "Overriding Sync with schedule, Arming System ...", file=self._logFileHandle)
-        asyncio.run(self.syncArm(True))        
+        asyncio.run(self.syncArm(True))
+        client.set_state(State(state="on", entity_id="sensor.blink_sync_module"))    
         tm.sleep(10)
 
-        print(str(nowTime) + ': ' + "Arming Backyard Out Camera ...", file=self._logFileHandle)        
+        print(str(nowTime) + ': ' + "Arming Backyard Out Camera ...", file=self._logFileHandle)                
         asyncio.run(self.cameraArm(self._backyardOutCamera, True))
+        client.set_state(State(state="on", entity_id="sensor.blink_backyard_camera", attributes={"battery": self._backyardOutCamera.battery}))
         tm.sleep(10)
         
         print(str(nowTime) + ': ' + "Arming Shivi Den Out Camera ...", file=self._logFileHandle)
         asyncio.run(self.cameraArm(self._shiviDenOutCamera, True))
+        client.set_state(State(state="on", entity_id="sensor.blink_shivi_den_out_camera", attributes={"battery": self._shiviDenOutCamera.battery}))
         tm.sleep(10)
         
         print(str(nowTime) + ': ' + "Arming Shivi Den In Camera ...", file=self._logFileHandle)
         asyncio.run(self.cameraArm(self._shiviDenInCamera, True))
+        client.set_state(State(state="on", entity_id="sensor.blink_shivi_den_in_camera", attributes={"battery": self._shiviDenInCamera.battery}))
         tm.sleep(10)
         
         # print(str(nowTime) + ': ' + "Arming Som Den In Camera ...")
@@ -167,6 +189,12 @@ class BlinkWrapper :
         
         print(str(nowTime) + ': ' + "Arming Living Room In Camera ...", file=self._logFileHandle)        
         asyncio.run(self.cameraArm(self._livingRoomInCamera, True))
+        client.set_state(State(state="on", entity_id="sensor.blink_living_room_in_camera", attributes={"battery": self._livingRoomInCamera.battery}))
+        tm.sleep(10)
+        
+        print(str(nowTime) + ': ' + "Arming Door Bell Camera ...", file=self._logFileHandle)
+        asyncio.run(self.cameraArm(self._doorBellCamera, True))
+        client.set_state(State(state="on", entity_id="sensor.blink_door_bell_camera", attributes={"battery": self._doorBellCamera.battery}))
         tm.sleep(10)
         
     def Setup(self) :
@@ -175,15 +203,14 @@ class BlinkWrapper :
         print("Searching for Home Cameras", file=self._logFileHandle)    
 
         #print(self._blink.cameras)
-
         for name, camera in self._blink.cameras.items():
             print(name, file=self._logFileHandle)
             if("door".lower() in name.lower()):
-                self._doorBellCamera = camera
-                print("Found door bell camera ...", file=self._logFileHandle)
+                self._doorBellCamera = camera                                
+                print("Found door bell camera ...", file=self._logFileHandle)                                
             elif("backyard".lower() in name.lower()):
                 self._backyardOutCamera = camera
-                print("Found backyard camera ...", file=self._logFileHandle)
+                print("Found backyard camera ...", file=self._logFileHandle)                
             elif("shivi den (out)".lower() in name.lower()):
                 self._shiviDenOutCamera = camera
                 print("Found shivi den out camera ...", file=self._logFileHandle)
@@ -265,11 +292,13 @@ def detect_iphone(logFileHandle):
     return found_flag
 
 def main():    
+    
     blinkWrapper = BlinkWrapper()
+    
     if blinkWrapper.Setup() == False:
        print("Login Failed", file=blinkWrapper._logFileHandle)
        exit()
-          
+       
     prevDetectTime = None
     startTime = datetime.now()
     
