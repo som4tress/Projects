@@ -1,2 +1,10 @@
 BlinkAutomation/BlinkAutomation.log
 LightAutomation/LightAutomation.log
+.vscode/settings.json
+BlinkAutomation/credentials.json
+BMWLockMonitor/BMWLockMonitorAutomation.log
+gphotos/client_secret.json
+gphotos/gphotos.txt
+WaterMeterAutomation/water_usage.json
+WaterMeterAutomation/WaterMeterAutomation.log
+BMWLockMonitor/BMWLockMonitorAutomation.log
