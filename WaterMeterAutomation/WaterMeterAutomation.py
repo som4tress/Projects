@@ -42,9 +42,9 @@ class WaterSmartWebSiteWrapper:
         self._setting_client_state = False
         
         self._longLivedToken = os.environ["HA_LONG_LIVE_TOKEN"]
-        self._logFile = os.environ['PLUTO_HOME_DIR'] + "/WaterMeterAutomation/WaterMeterAutomation.log"
-        self._logFileHandle = open(self._logFile, 'w')
-        # self._logFileHandle = sys.stdout
+        # self._logFile = os.environ['PLUTO_HOME_DIR'] + "/WaterMeterAutomation/WaterMeterAutomation.log"
+        # self._logFileHandle = open(self._logFile, 'w')
+        self._logFileHandle = sys.stdout
     
     def calculate_average(self, data, days):
         end_date = max(data.keys())

@@ -18,6 +18,8 @@ class KasaHAWrapper :
         self._livingRoomWaxWarmerSwitchIP = None
         
         self._sensorValuesMaxCount = 5
+        self._hallwayDimmerAmbientLight = None
+        self._livingRoomDimmerAmbientLight = None
         self._livingRoomDimmerAmbientLightValuesArr = None
         self._hallwayDimmerAmbientLightValuesArr = None
         
@@ -25,12 +27,20 @@ class KasaHAWrapper :
         
         self._logFile = os.environ['PLUTO_HOME_DIR'] + "/LightAutomation/LightAutomation.log"
         self._logFileHandle = open(self._logFile, 'w')
-        # self._logFileHandle = sys.stdout
+        #self._logFileHandle = sys.stdout
         
         self._longLivedToken = os.environ["HA_LONG_LIVE_TOKEN"]
     
     async def discoverDimmers(self):
         try:
+            client = Client(os.environ["HA_EXTERNAL_API_URL"], self._longLivedToken, use_async=False)
+            sun_state = str(client.get_state(entity_id="sun.sun").state)
+            print(f"Sun State : {sun_state}", file=self._logFileHandle)
+            
+            if sun_state == "below_horizon":
+                print("Sun is below horizon hence skipping discovery", file=self._logFileHandle)
+                return
+            
             nowTime = datetime.now()#.astimezone(timezone('US/Pacific'))
             
             if self._prevTime is None or (nowTime - self._prevTime).seconds >= 600:        
@@ -91,6 +101,14 @@ class KasaHAWrapper :
             print(f"Exception in discoverDimmers : {str(e)}", file=self._logFileHandle)
         
     async def HAAdjustLighting(self): ## Adjust Lighting based on Living Room's Ambient Light, Sun Position and Time of the day
+        client = Client(os.environ["HA_EXTERNAL_API_URL"], self._longLivedToken, use_async=False)
+        sun_state = str(client.get_state(entity_id="sun.sun").state)
+        print(f"Sun State : {sun_state}", file=self._logFileHandle)
+        
+        if sun_state == "below_horizon":
+            print("Sun is below horizon hence skipping adjustment", file=self._logFileHandle)
+            return
+            
         if self._livingRoomDimmerAmbientLightValuesArr is None:
             self._ambientValueReadCount = 0
             self._livingRoomDimmerAmbientLightValuesArr = numpy.zeros(self._sensorValuesMaxCount)
@@ -100,8 +118,12 @@ class KasaHAWrapper :
             print("Initializing ambient sensor values array", file=self._logFileHandle)
         
         if self._ambientValueReadCount < self._sensorValuesMaxCount:
-            self._livingRoomDimmerAmbientLightValuesArr[self._ambientValueReadCount] = self._livingRoomDimmerAmbientLight
-            self._hallwayDimmerAmbientLightValuesArr[self._ambientValueReadCount] = self._hallwayDimmerAmbientLight
+            if self._livingRoomDimmerAmbientLight is not None:
+                self._livingRoomDimmerAmbientLightValuesArr[self._ambientValueReadCount] = self._livingRoomDimmerAmbientLight
+            
+            if self._hallwayDimmerAmbientLight is not None:
+                self._hallwayDimmerAmbientLightValuesArr[self._ambientValueReadCount] = self._hallwayDimmerAmbientLight
+                
             self._ambientValueReadCount += 1
             
         print(f"Living Room Abient Light Values : {self._livingRoomDimmerAmbientLightValuesArr}", file=self._logFileHandle)
@@ -109,9 +131,6 @@ class KasaHAWrapper :
             
         if self._ambientValueReadCount >= self._sensorValuesMaxCount:
             print("Updating HA Values", file=self._logFileHandle)
-                        
-            client = Client(os.environ["HA_EXTERNAL_API_URL"], self._longLivedToken, use_async=False)
-            sun_state = str(client.get_state(entity_id="sun.sun").state)
             
             val = str(round(abs(numpy.average(self._livingRoomDimmerAmbientLightValuesArr)), 2))
             client.set_state(State(state=val, entity_id="sensor.living_room_ambient_light", attributes={"ambient_light":val}))
@@ -139,7 +158,7 @@ def main():
             kasaWrapper._logFileHandle.flush()
             os.fsync(kasaWrapper._logFileHandle.fileno())
         
-        tm.sleep(30)
+        tm.sleep(60)
     
 if __name__ == "__main__":
     main()
